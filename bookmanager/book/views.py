@@ -12,3 +12,4 @@ def index(request):
         'name':'boomiiiiiing'
     }
     return render(request, 'book/index.html',context=context)
+
