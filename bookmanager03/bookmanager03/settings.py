@@ -49,6 +49,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'book.middleware.TestMiddleWare',
+    # 注册中间件
 ]
 
 ROOT_URLCONF = 'bookmanager03.urls'

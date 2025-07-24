@@ -1,5 +1,8 @@
 from django.http import HttpResponse
+
 from django.shortcuts import render
+from django.views import View
+
 from book.models import BookInfo
 
 
@@ -112,3 +115,23 @@ def get_session(request):
 
     content = '{},{}'.format(user_id,username)
     return HttpResponse(content)
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+# LoginRequiredMixin 判断用户登录
+class OrderView(LoginRequiredMixin,View):
+
+    def get(selfself,request):
+        # isLogin=
+        # if not isLogin:
+        #     return HttpResponse('你没有登录，页面跳转中～～～～')
+        return HttpResponse('get我的订单界面，这个界面必须登录')
+
+    def post(self,request):
+
+        return HttpResponse('post 我的订单，这个界面必须要登录')
+
+
+
+def test_view(request):
+    return HttpResponse("强制触发响应")

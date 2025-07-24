@@ -1,9 +1,9 @@
 from django.urls import path
 
-from book.views import create_book, shop, register,json, method, methods
+from book.views import create_book, shop, register, json, method, methods, OrderView
 
 from book.views import set_cookie,get_cookie
-from book.views import set_session,get_session
+from book.views import set_session,get_session,test_view
 
 from django.urls import converters
 
@@ -34,4 +34,6 @@ urlpatterns=[
     path('get_cookie/',get_cookie),
     path('set_session/',set_session),
     path('get_session/',get_session),
+    path('order/',OrderView.as_view()),
+    path('test/',test_view)
 ]
